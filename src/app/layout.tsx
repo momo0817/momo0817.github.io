@@ -27,7 +27,8 @@ const ptSerif = PT_Serif({
 
 export const metadata: Metadata = {
   title: customMetadata.title || aboutMe.name,
-  description: customMetadata.description || aboutMe.description,
+  // description: customMetadata.description || aboutMe.description,
+    description: customMetadata.description,
   icons: {
     icon: "/favicon.ico",
   },
