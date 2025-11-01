@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Serif, PT_Serif } from "next/font/google";
 import "./globals.css";
 import { aboutMe } from "@/data/aboutme";
@@ -25,14 +25,14 @@ const ptSerif = PT_Serif({
   weight: ["400", "700"],
 });
 
-export const metadata: Metadata = {
-  title: customMetadata.title || aboutMe.name,
-  // description: customMetadata.description || aboutMe.description,
-    description: customMetadata.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
+// export const metadata: Metadata = {
+//   title: customMetadata.title || aboutMe.name,
+//   // description: customMetadata.description || aboutMe.description,
+//     description: customMetadata.description,
+//   icons: {
+//     icon: "/favicon.ico",
+//   },
+// };
 
 export default function RootLayout({
   children,
