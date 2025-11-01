@@ -1,0 +1,37 @@
+export interface Talk {
+  date: string;
+  title: string;
+  description?: string;
+  link?: string;
+}
+
+export const talkData: Talk[] = [
+  {
+    date: "October 2025",
+    title: "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+    description: "LLM勉強会",
+    link: "https://drive.google.com/file/d/1MBOKCK3nS1-5sSVV-EZw-6gCNDL9XA2O/view"
+  },
+  {
+    date: "March 2025",
+    title: "生成系タスクの自動評価においてチェックリストの使用は有効なのか？",
+    description: "LLM勉強会",
+    link: "https://drive.google.com/file/d/1iCTgvNHYrjXEFWfLmgO9J1X0lqJCPNLk/view"
+  },
+  {
+    date: "September 2024",
+    title: "はじめての国際会議~他分野編~",
+    description: "「目指せ国際会議！」- YANS2024",
+    link: "https://drive.google.com/file/d/17WBidqx69GkD94A9CESqaGUPSB93a7TT/view"
+  },
+  {
+    date: "July 2024",
+    title: "国語の記述式問題における（答案にあった）コメント文生成の研究",
+    description: "「サイエンス・アドバイザーと一緒に考える 研究者ってなに？」- 東北大学オープンキャンパス2024"
+  },
+  {
+    date: "February 2024",
+    title: "システムによるフィードバック体験ワークショップ"
+  }
+
+];
