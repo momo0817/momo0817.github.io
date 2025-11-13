@@ -17,9 +17,9 @@ export function PublicationsSection({ language = 'en' }: PublicationsSectionProp
   const typeOrder: PublicationType[] = [
     "international-conference-peer-reviewed",
     "journal-peer-reviewed",
-    "international-conference-peer-reviewed-workshop",
+    // "international-conference-peer-reviewed-workshop",
     "domestic-conference-non-peer-reviewed",
-    "domestic-symposium-non-peer-reviewed",
+    // "domestic-symposium-non-peer-reviewed",
     "preprint",
     "other"
   ];
