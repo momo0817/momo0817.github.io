@@ -1,6 +1,6 @@
 export interface Experience {
   date: string;
-  type: "internship" | "research-assistant" | "student-trainee" | "part-time" | "volunteer" | "other";
+  type: "internship" | "research-assistant" | "student-trainee" | "part-time" | "volunteer" | "visiting student"|"other";
   title: string;
   company: string;
   description?: string;
@@ -17,6 +17,14 @@ export const experienceData: Experience[] = [
     company: "Research and Development Center for Large Language Models, National Institute of Informatics",
     advisor: "Yusuke Miyao, and Saku Sugawara",
     companyUrl: "https://llm-jp.nii.ac.jp/en/",
+  },
+  {
+    date: "November 2024 - December 2024",
+    type: "visiting student",
+    title: "Visiting Student",
+    company: "NLP Department, Mohamed Bin Zayed University of Artificial Intelligence",
+    advisor: "Kentaro Inui",
+    companyUrl: "https://mbzuai.ac.ae/research-department/natural-language-processing-department/",
   },
   {
     date: "April 2024 - Present",

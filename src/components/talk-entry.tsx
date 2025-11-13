@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Talk } from "@/data/talk";
 
-export function TalkEntry({ talk }: { talk: Talk }) {
+export function TalkEntry({ talk, hideLink }: { talk: Talk; hideLink?: boolean }) {
   return (
     <div className="grid grid-cols-4 gap-x-3 py-3">
       {/* 日付 */}
@@ -23,7 +23,7 @@ export function TalkEntry({ talk }: { talk: Talk }) {
         )}
 
         {/* link部分（PublicationEntryと統一デザイン） */}
-        {talk.link && (
+        {!hideLink && talk.link && (
           <Link
             href={talk.link}
             target="_blank"

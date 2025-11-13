@@ -2,7 +2,15 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Research_Fellowship } from "@/data/research-fellowship";
 
-export function ResearchFellowshipEntry({ researchFellowship }: { researchFellowship: Research_Fellowship }) {
+export function ResearchFellowshipEntry({
+  researchFellowship,
+  hideLink,
+  useEnglish = false,
+}: {
+  researchFellowship: Research_Fellowship;
+  hideLink?: boolean;
+  useEnglish?: boolean;
+}) {
   return (
     <div className="grid grid-cols-4 gap-x-3 py-3">
       {/* 日付 */}
@@ -12,18 +20,20 @@ export function ResearchFellowshipEntry({ researchFellowship }: { researchFellow
       <div className="col-span-3 flex flex-col">
         {/* タイトル */}
         <h3 className="font-serif text-md text-zinc-900 mb-1">
-          {researchFellowship.title}
+          {useEnglish ? researchFellowship.titleEn || researchFellowship.title : researchFellowship.title}
         </h3>
 
         {/* 任意情報（小さめ） */}
         {researchFellowship.description && (
           <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
-            {researchFellowship.description}
+            {useEnglish
+              ? researchFellowship.descriptionEn || researchFellowship.description
+              : researchFellowship.description}
           </p>
         )}
 
-        {/* link部分（PublicationEntryと統一デザイン） */}
-        {researchFellowship.link && (
+        {/* link部分（CV用に非表示可能） */}
+        {!hideLink && researchFellowship.link && (
           <Link
             href={researchFellowship.link}
             target="_blank"

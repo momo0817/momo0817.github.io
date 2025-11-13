@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import {Others} from "@/data/others";
+import { Others } from "@/data/others";
 
-export function OthersEntry({ others }: { others: Others }) {
+export function OthersEntry({ others, hideLink }: { others: Others; hideLink?: boolean }) {
   return (
     <div className="grid grid-cols-4 gap-x-3 py-3">
       {/* 日付 */}
@@ -11,9 +11,7 @@ export function OthersEntry({ others }: { others: Others }) {
       {/* タイトル・説明・リンク */}
       <div className="col-span-3 flex flex-col">
         {/* タイトル */}
-        <h3 className="font-serif text-md text-zinc-900 mb-1">
-          {others.title}
-        </h3>
+        <h3 className="font-serif text-md text-zinc-900 mb-1">{others.title}</h3>
 
         {/* 任意情報（小さめ） */}
         {others.description && (
@@ -22,8 +20,8 @@ export function OthersEntry({ others }: { others: Others }) {
           </p>
         )}
 
-        {/* link部分（PublicationEntryと統一デザイン） */}
-        {others.link && (
+        {/* link部分（CVでは非表示可能） */}
+        {!hideLink && others.link && (
           <Link
             href={others.link}
             target="_blank"
