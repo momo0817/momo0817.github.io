@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  output: "export",  // 静的出力のみ
+  // basePath と assetPrefix は不要
 };
 
 export default nextConfig;
