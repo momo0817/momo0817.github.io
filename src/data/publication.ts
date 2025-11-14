@@ -76,6 +76,8 @@ export const publicationData: Publication[] = [
     conference: "Japanese Symposium on Open Large Language Models",
     title: "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
     authors: "Momoka Furuhashi, Kouta Nakayama, Takashi Kodama, and Saku Sugawara.",
+    month: "November",
+    location: "Tokyo, Japan.",
   },
   {
     year: "2025",
@@ -87,7 +89,7 @@ export const publicationData: Publication[] = [
     conferenceAbbr:"EMNLP2025 Main",
     pages: "10641--10664",
     month: "November",
-    location: "Suzhou, China",
+    location: "Suzhou, China.",
     paperUrl: "https://aclanthology.org/2025.emnlp-main.538/",
     projectUrl: "https://momo0817.github.io/checklist-effectiveness-study-github.io/",
     codeUrl: "https://github.com/momo0817/checklist-effectiveness-study/tree/main",
@@ -103,7 +105,7 @@ export const publicationData: Publication[] = [
     conferenceAbbr:"BabyLM Workshop",
     pages: "508--524",
     month: "November",
-    location: "Suzhou, China",
+    location: "Suzhou, China.",
     paperUrl:"https://aclanthology.org/2025.babylm-main.36/"
   },
   {
@@ -116,7 +118,7 @@ export const publicationData: Publication[] = [
     conferenceAbbr:"EDULEARN 2024",
     pages: "6706--6716",
     month: "July",
-    location: "Majorca, Spain",
+    location: "Majorca, Spain.",
     paperUrl: "https://library.iated.org/view/FURUHASHI2024AUT",
   },
   {
@@ -130,7 +132,7 @@ export const publicationData: Publication[] = [
     fullConferenceName:"The 20th Symposium of Young Researcher Association for NLP Studies",
     conferenceAbbr:"YANS 2025",
     month: "September",
-    location: "Hamamatsu, Japan",
+    location: "Hamamatsu, Japan.",
   },
   {
     year: "2025",
@@ -145,7 +147,7 @@ export const publicationData: Publication[] = [
     fullConferenceName:"The 20th Symposium of Young Researcher Association for NLP Studies",
     conferenceAbbr:"YANS 2025",
     month: "September",
-    location: "Hamamatsu, Japan",
+    location: "Hamamatsu, Japan.",
   },
   {
     year: "2025",
@@ -160,7 +162,7 @@ export const publicationData: Publication[] = [
     conferenceAbbr:"NLP 2025",
     pages: "1968--1973",
     month: "March",
-    location: "Nagasaki, Japan",
+    location: "Nagasaki, Japan.",
 
   },
   {
@@ -178,7 +180,7 @@ export const publicationData: Publication[] = [
     fullConferenceName:"The 19th Symposium of Young Researcher Association for NLP Studies",
     conferenceAbbr:"YANS 2024",
     month: "September",
-    location: "Osaka, Japan",
+    location: "Osaka, Japan.",
   },
   {
     year: "2024",
@@ -193,7 +195,7 @@ export const publicationData: Publication[] = [
     conferenceAbbr:"NLP 2024",
     pages: "18--23",
     month: "March",
-    location: "Kobe, Japan",
+    location: "Kobe, Japan.",
   },
   {
     year: "2023",
@@ -206,7 +208,7 @@ export const publicationData: Publication[] = [
     fullConferenceName:"The 18th Symposium of Young Researcher Association for NLP Studies",
     conferenceAbbr:"YANS 2023",
     month: "August",
-    location: "Tokyo, Japan",
+    location: "Tokyo, Japan.",
   },
 
 ];
