@@ -1,16 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export', // 静的エクスポート
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+    unoptimized: true, // 画像最適化を無効化
   },
-  output: "export",  // 静的出力のみ
-  // basePath と assetPrefix は不要
 };
 
-export default nextConfig;
+module.exports = nextConfig;
