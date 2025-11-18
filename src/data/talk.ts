@@ -10,7 +10,7 @@ export interface Talk {
 export const talkData: Talk[] = [
   {
     date: "October 2025",
-    title: "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+    title: "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks? - Part 2-",
     description: "LLM勉強会",
     descriptionEn: "LLM Study Group",
     link: "https://drive.google.com/file/d/1MBOKCK3nS1-5sSVV-EZw-6gCNDL9XA2O/view"
@@ -18,7 +18,7 @@ export const talkData: Talk[] = [
   {
     date: "March 2025",
     title: "生成系タスクの自動評価においてチェックリストの使用は有効なのか？",
-    titleEn: "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+    titleEn: "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks? - Part 1-",
     description: "LLM勉強会",
     descriptionEn: "LLM Study Group",
     link: "https://drive.google.com/file/d/1iCTgvNHYrjXEFWfLmgO9J1X0lqJCPNLk/view"

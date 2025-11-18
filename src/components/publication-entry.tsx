@@ -6,6 +6,7 @@ interface PublicationEntryProps {
   publication: Publication;
   hideLinks?: boolean; // ← 追加
   index?: number;
+  showJapaneseTitle?: boolean;
 }
 
 function highlightAuthor(authors: string) {
@@ -28,7 +29,7 @@ function highlightAuthor(authors: string) {
   );
 }
 
-export function PublicationEntry({ publication, hideLinks, index }: PublicationEntryProps) {
+export function PublicationEntry({ publication, hideLinks, showJapaneseTitle = false, index }: PublicationEntryProps & { showJapaneseTitle?: boolean }) {
   return (
     <li className="mb-6">
       {/* 番号 */}
@@ -51,7 +52,19 @@ export function PublicationEntry({ publication, hideLinks, index }: PublicationE
 
         <div className="flex flex-col flex-1">
           {/* 論文タイトル */}
-          <h3 className="font-serif text-md mb-1">{publication.title}</h3>
+          <h3 className="font-serif text-md mb-1">
+            {showJapaneseTitle && publication.titleEn && publication.title !== publication.titleEn ? (
+              <>
+                {publication.titleEn} {/* 英語タイトル */}
+                <span className="block text-zinc-600 italic text-sm">
+                  {publication.title} (in Japanese) {/* 日本語タイトル */}
+                </span>
+              </>
+            ) : (
+              publication.title // HP用: 日本語のみ
+            )}
+          </h3>
+
 
           {/* 著者名 */}
           <p className="text-sm text-zinc-600 mb-1">{highlightAuthor(publication.authors)}</p>

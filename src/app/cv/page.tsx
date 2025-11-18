@@ -114,7 +114,7 @@ export default function CVPage() {
                         </h3>
                         <div className="space-y-4"> {/* 元は space-y-2 */}
                             {pubs.map((pub, idx) => (
-                            <PublicationEntry key={idx} publication={pub} hideLinks />
+                            <PublicationEntry key={idx} publication={pub} hideLinks showJapaneseTitle={true}  />
                             ))}
                         </div>
                         </div>

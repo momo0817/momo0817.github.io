@@ -70,6 +70,17 @@ export interface Publication {
 }
 
 export const publicationData: Publication[] = [
+  // {
+  //   year: "2025",
+  //   type: "journal-peer-reviewed",
+  //   conference: "Japanese Symposium on Open Large Language Models",
+  //   title:"答案診断グラフを用いた国語記述式問題のための論理構造に基づくフィードバック自動生成",
+  //   titleEn: "Automatic Feedback Generation of Logic-Based for Short Answer Questions Using Answer Diagnostic Graphs",
+  //   authors: "古橋 萌々香, 舟山 弘晃, 松林 優一郎, 震明 万智, 磯部 順子, 石井 雄隆, 乾 健太郎.",
+  //   authorsEn: "Momoka Furuhashi, Hiroaki Funayama, Yuichiroh Matsubayashi, Machi Shimmei, Yoriko Isobe, Yutaka Ishii, and Kentaro Inui.",
+  //   month: "November",
+  //   location: "Tokyo, Japan.",
+  // },
   {
     year: "2025",
     type: "domestic-conference-non-peer-reviewed",
@@ -215,7 +226,7 @@ export const publicationData: Publication[] = [
 export function getEnglishPublications(): Publication[] {
   return publicationData.map(pub => ({
     ...pub,
-    title: pub.titleEn || pub.title,
+    titleEn: pub.titleEn || pub.title,
     conference: pub.conferenceEn || pub.conference,
     authors: pub.authorsEn || pub.authors,
     paperUrl: undefined, // CVでは非表示
