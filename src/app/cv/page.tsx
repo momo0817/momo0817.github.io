@@ -99,6 +99,7 @@ export default function CVPage() {
               "journal-peer-reviewed",
               "domestic-conference-non-peer-reviewed",
               "preprint",
+              "article",
               "other",
             ];
             return (

@@ -21,6 +21,7 @@ export function PublicationsSection({ language = 'en' }: PublicationsSectionProp
     "domestic-conference-non-peer-reviewed",
     // "domestic-symposium-non-peer-reviewed",
     "preprint",
+    "article",
     "other"
   ];
 

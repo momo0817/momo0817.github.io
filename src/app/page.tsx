@@ -97,6 +97,7 @@ export default function Home() {
                     "domestic-conference-non-peer-reviewed",
                     "domestic-symposium-non-peer-reviewed",
                     "preprint",
+                    "article",
                     "other"
                   ];
                   

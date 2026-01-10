@@ -8,6 +8,7 @@ export type PublicationType =
   // | "domestic-symposium-non-peer-reviewed"
   // | "international-conference-peer-reviewed-workshop"
   | "preprint"
+  | "article"
   | "other";
 
 // 日本語表示用のラベル
@@ -35,6 +36,10 @@ export const publicationTypeLabels: Record<PublicationType, { en: string; ja: st
   "preprint": {
     en: "Preprint",
     ja: "プレプリント"
+  },
+  "article": {
+    en: "Article",
+    ja: "学会記事"
   },
   "other": {
     en: "Other",
@@ -70,17 +75,46 @@ export interface Publication {
 }
 
 export const publicationData: Publication[] = [
-  // {
-  //   year: "2025",
-  //   type: "journal-peer-reviewed",
-  //   conference: "Japanese Symposium on Open Large Language Models",
-  //   title:"答案診断グラフを用いた国語記述式問題のための論理構造に基づくフィードバック自動生成",
-  //   titleEn: "Automatic Feedback Generation of Logic-Based for Short Answer Questions Using Answer Diagnostic Graphs",
-  //   authors: "古橋 萌々香, 舟山 弘晃, 松林 優一郎, 震明 万智, 磯部 順子, 石井 雄隆, 乾 健太郎.",
-  //   authorsEn: "Momoka Furuhashi, Hiroaki Funayama, Yuichiroh Matsubayashi, Machi Shimmei, Yoriko Isobe, Yutaka Ishii, and Kentaro Inui.",
-  //   month: "November",
-  //   location: "Tokyo, Japan.",
-  // },
+{
+    year: "2026",
+    type: "article", // ← 追加
+    conference: "Journal of Natural Language Processing",
+    title: 'Are Checklists Really Useful for Automatic Evaluation of Generative Tasks? に至る研究過程．',
+    authors: "古橋 萌々香.",
+    paperUrl: "--",
+    titleEn: 'How We Came to "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?"',
+    authorsEn: "Momoka Furuhashi.",
+    fullConferenceName:"The 32th Annual Meeting of the Association for Natural Language Processing",
+    pages: "--",
+    month: "March",
+
+  },
+  {
+    year: "2026",
+    type: "domestic-conference-non-peer-reviewed", // ← 追加
+    conference: "NLP",
+    title: "LLM による教育的フィードバックの生成と評価．",
+    authors: "古橋 萌々香, 中山 功太, 児玉 貴志, 菅原 朔, 高見 享佑.",
+    paperUrl: "--",
+    titleEn: "Generating and Evaluating Educational Feedback with Large Language Models",
+    authorsEn: "Momoka Furuhashi, Kouta Nakayama, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
+    fullConferenceName:"The 32th Annual Meeting of the Association for Natural Language Processing",
+    conferenceAbbr:"NLP 2026",
+    pages: "--",
+    month: "March",
+    location: "Utsunomiya, Japan.",
+
+  },
+  {
+    year: "2026.",
+    type: "journal-peer-reviewed",
+    conference: "Journal of Natural Language Processing",
+    title:"答案診断グラフを用いた国語記述式問題のための論理構造に基づくフィードバック自動生成.",
+    titleEn: "Automatic Feedback Generation for Japanese Reading Comprehension Short-Answer Questions Using Discourse-Structure-based Answer Diagnostic Graphs",
+    authors: "古橋 萌々香, 舟山 弘晃, 松林 優一郎, 震明 万智, 磯部 順子, 石井 雄隆, 乾 健太郎.",
+    authorsEn: "Momoka Furuhashi, Hiroaki Funayama, Yuichiroh Matsubayashi, Machi Shimmei, Yoriko Isobe, Yutaka Ishii, and Kentaro Inui.",
+    month: "March",
+  },
   {
     year: "2025",
     type: "domestic-conference-non-peer-reviewed",
@@ -245,6 +279,7 @@ export function groupPublicationsByType(publications: Publication[]): Record<Pub
     // "domestic-symposium-non-peer-reviewed": [],
     // "international-conference-peer-reviewed-workshop": [],
     "preprint": [],
+    "article": [],
     "other": []
   };
 
