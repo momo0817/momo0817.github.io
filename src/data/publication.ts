@@ -50,7 +50,7 @@ export const publicationTypeLabels: Record<PublicationType, { en: string; ja: st
 export interface Publication {
   year: string;
   type: PublicationType; 
-  conference: string;
+  conference?: string;
   title: string;
   authors: string;
   paperUrl?: string;
@@ -75,6 +75,14 @@ export interface Publication {
 }
 
 export const publicationData: Publication[] = [
+  {
+    year: "2026",
+    type: "preprint", // ← 追加
+    title: "Which Feedback Works for Whom? Differential Effects of LLM-Generated Feedback Elements Across Learner Profiles.",
+    authors: "Momoka Furuhashi, Kouta Nakayama, Noboru Kawai, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
+    paperUrl: "https://doi.org/10.48550/arXiv.2602.11650",
+    month: "February",
+    },
 {
     year: "2026",
     type: "article", // ← 追加
@@ -84,7 +92,7 @@ export const publicationData: Publication[] = [
     paperUrl: "--",
     titleEn: 'How We Came to "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?"',
     authorsEn: "Momoka Furuhashi.",
-    fullConferenceName:"The 32th Annual Meeting of the Association for Natural Language Processing",
+    fullConferenceName:"Journal of Natural Language Processing",
     pages: "--",
     month: "March",
 
@@ -99,10 +107,8 @@ export const publicationData: Publication[] = [
     titleEn: "Generating and Evaluating Educational Feedback with Large Language Models",
     authorsEn: "Momoka Furuhashi, Kouta Nakayama, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
     fullConferenceName:"The 32th Annual Meeting of the Association for Natural Language Processing",
-    conferenceAbbr:"NLP 2026",
     pages: "--",
-    month: "March",
-    location: "Utsunomiya, Japan.",
+    month: "March"
 
   },
   {
