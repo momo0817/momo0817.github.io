@@ -89,11 +89,11 @@ export const publicationData: Publication[] = [
     conference: "Journal of Natural Language Processing",
     title: 'Are Checklists Really Useful for Automatic Evaluation of Generative Tasks? に至る研究過程．',
     authors: "古橋 萌々香.",
-    paperUrl: "--",
+    paperUrl: "https://www.jstage.jst.go.jp/article/jnlp/33/1/33_376/_article/-char/ja",
     titleEn: 'How We Came to "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?"',
     authorsEn: "Momoka Furuhashi.",
     fullConferenceName:"Journal of Natural Language Processing",
-    pages: "--",
+    pages: "376--381",
     month: "March",
 
   },
@@ -103,11 +103,11 @@ export const publicationData: Publication[] = [
     conference: "NLP",
     title: "LLM による教育的フィードバックの生成と評価．",
     authors: "古橋 萌々香, 中山 功太, 児玉 貴志, 菅原 朔, 高見 享佑.",
-    paperUrl: "--",
+    paperUrl: "https://www.anlp.jp/proceedings/annual_meeting/2026/pdf_dir/P7-11.pdf",
     titleEn: "Generating and Evaluating Educational Feedback with Large Language Models",
     authorsEn: "Momoka Furuhashi, Kouta Nakayama, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
     fullConferenceName:"The 32th Annual Meeting of the Association for Natural Language Processing",
-    pages: "--",
+    pages: "3325--3330",
     month: "March"
 
   },
@@ -119,6 +119,9 @@ export const publicationData: Publication[] = [
     titleEn: "Automatic Feedback Generation for Japanese Reading Comprehension Short-Answer Questions Using Discourse-Structure-based Answer Diagnostic Graphs",
     authors: "古橋 萌々香, 舟山 弘晃, 松林 優一郎, 震明 万智, 磯部 順子, 石井 雄隆, 乾 健太郎.",
     authorsEn: "Momoka Furuhashi, Hiroaki Funayama, Yuichiroh Matsubayashi, Machi Shimmei, Yoriko Isobe, Yutaka Ishii, and Kentaro Inui.",
+    paperUrl: "https://www.jstage.jst.go.jp/article/jnlp/33/1/33_240/_article/-char/ja",
+    fullConferenceName:"Journal of Natural Language Processing",
+    pages: "240--282",
     month: "March",
   },
   {

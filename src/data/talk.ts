@@ -9,6 +9,11 @@ export interface Talk {
 
 export const talkData: Talk[] = [
   {
+    date: "March 2026",
+    title: "8大学同時共同開催 情報学 for all by all",
+    link: "https://www.ist.hokudai.ac.jp/projectz/"
+  },
+  {
     date: "October 2025",
     title: "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks? - Part 2-",
     description: "LLM勉強会",
