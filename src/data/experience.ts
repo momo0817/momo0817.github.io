@@ -1,6 +1,6 @@
 export interface Experience {
   date: string;
-  type: "internship" | "research-assistant" | "student-trainee" | "part-time" | "volunteer" | "visiting student"|"other";
+  type: "internship" | "research-assistant" | "student-trainee" | "part-time" | "volunteer" | "visiting researcher"|"other";
   title: string;
   company: string;
   description?: string;
@@ -11,7 +11,15 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
-    date: "May 2024 - Present",
+    date: "July 2026 - present",
+    type: "visiting researcher",
+    title: "Visiting Researcher",
+    company: "Human-Centered AI-based System Lab, Bern University of Applied Sciences",
+    advisor: "Thiemo Wambsganss, and Roman Rietsche",
+    companyUrl: "https://haislab.com/",
+  },
+  {
+    date: "May 2024 - August 2026",
     type: "research-assistant",
     title: "Research Assistant",
     company: "Research and Development Center for Large Language Models, National Institute of Informatics",
@@ -20,8 +28,8 @@ export const experienceData: Experience[] = [
   },
   {
     date: "November 2024 - December 2024",
-    type: "visiting student",
-    title: "Visiting Student",
+    type: "visiting researcher",
+    title: "Visiting Researcher",
     company: "NLP Department, Mohamed Bin Zayed University of Artificial Intelligence",
     advisor: "Kentaro Inui",
     companyUrl: "https://mbzuai.ac.ae/research-department/natural-language-processing-department/",

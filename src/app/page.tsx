@@ -14,6 +14,8 @@ import { talkData } from "@/data/talk";
 import { researchFellowshipData } from "@/data/research-fellowship";
 // import { PortfolioEntry } from "@/components/portfolio-entry";
 // import { portfolioData } from "@/data/portfolio";
+import { ReviewerEntry} from "@/components/reviewer";
+import { reviewerData} from "@/data/reviewer";
 import { OthersEntry } from "@/components/others";
 import { othersData } from "@/data/others";
 import { sectionOrder, Section } from "@/data/section-order";
@@ -98,6 +100,7 @@ export default function Home() {
                     "domestic-symposium-non-peer-reviewed",
                     "preprint",
                     "article",
+                    "review",
                     "other"
                   ];
                   
@@ -174,6 +177,22 @@ export default function Home() {
                         <div className="space-y-12">
                           {researchFellowshipData.map((researchFellowship, index) => (
                             <ResearchFellowshipEntry key={index} researchFellowship={researchFellowship} />
+                          ))}
+                        </div>
+                      </section>
+                    )
+                  );
+                
+                case Section.Reviewer:
+                  return (
+                    reviewerData.length > 0 && (
+                      <section key={sectionName}>
+                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
+                          Reviewer
+                        </h2>
+                        <div className="space-y-12">
+                          {reviewerData.map((reviewer, index) => (
+                            <ReviewerEntry key={index} reviewer={reviewer} />
                           ))}
                         </div>
                       </section>
