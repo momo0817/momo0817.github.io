@@ -20,11 +20,11 @@ export interface AboutMe {
 
 export const aboutMe: AboutMe = {
   name: "Momoka Furuhashi",
-  title: "1st year Ph.D. Student in Computer Science",
+  title: "2nd year Ph.D. Student in Computer Science",
   institution: "Tohoku University",
   // Note that links work in the description
   description:
-    "I'm a first-year PhD student at <a href='https://www.nlp.ecei.tohoku.ac.jp/about-us/labs/'>TohokuNLP Group</a>, <a href='https://www.is.tohoku.ac.jp/en/'>Tohoku University</a>.",
+    "I'm a 2nd-year PhD student at <a href='https://www.nlp.ecei.tohoku.ac.jp/about-us/labs/'>TohokuNLP Group</a>, <a href='https://www.is.tohoku.ac.jp/en/'>Tohoku University</a>.",
   email: "furuhashi.momoka.p4@dc.tohoku.ac.jp",
   researchInterest: "My research interests include applying natural language processing techniques to generate feedback based on students’ answers and to automatically evaluation of generative tasks.", // ← 例
   imageUrl:"/about_me.JPG",
