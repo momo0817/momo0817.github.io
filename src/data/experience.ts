@@ -10,16 +10,16 @@ export interface Experience {
 }
 
 export const experienceData: Experience[] = [
+  // {
+  //   date: "July 2026 - present",
+  //   type: "visiting researcher",
+  //   title: "Visiting Researcher",
+  //   company: "Human-Centered AI-based System Lab, Bern University of Applied Sciences",
+  //   advisor: "Thiemo Wambsganss, and Roman Rietsche",
+  //   companyUrl: "https://haislab.com/",
+  // },
   {
-    date: "July 2026 - present",
-    type: "visiting researcher",
-    title: "Visiting Researcher",
-    company: "Human-Centered AI-based System Lab, Bern University of Applied Sciences",
-    advisor: "Thiemo Wambsganss, and Roman Rietsche",
-    companyUrl: "https://haislab.com/",
-  },
-  {
-    date: "May 2024 - August 2026",
+    date: "May 2024 - Present",
     type: "research-assistant",
     title: "Research Assistant",
     company: "Research and Development Center for Large Language Models, National Institute of Informatics",

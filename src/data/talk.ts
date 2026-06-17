@@ -11,6 +11,7 @@ export const talkData: Talk[] = [
   {
     date: "March 2026",
     title: "8大学同時共同開催 情報学 for all by all",
+    titleEn: "8 Universities Jointly Held Informatics for All by All",
     link: "https://www.ist.hokudai.ac.jp/projectz/"
   },
   {

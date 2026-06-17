@@ -6,10 +6,10 @@ export interface Others {
 }
 
 export const othersData: Others[] = [
-  {
-    date: "September 2026 - February 2027",
-    title: "Swiss Government Excellence Scholarships 2026-2027 Research Scholarships Main Candidate",
-  },
+  // {
+  //   date: "September 2026 - February 2027",
+  //   title: "Swiss Government Excellence Scholarships 2026-2027 Research Scholarships Main Candidate",
+  // },
   {
     date: "April 2025 - Present",
     title: "NLP study group for doctoral students committee",
