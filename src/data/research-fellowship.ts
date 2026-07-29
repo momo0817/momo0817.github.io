@@ -8,11 +8,11 @@ export interface Research_Fellowship {
 }
 
 export const researchFellowshipData: Research_Fellowship[] = [
-  // {
-  //   date: "September 2026 - February 2027",
-  //   title: "Swiss Government Excellence Scholarships 2026-2027 (Research scholarships)",
-  //   titleEn: "Swiss Government Excellence Scholarships 2026-2027 (Research scholarships main candidate)",
-  // },
+  {
+    date: "September 2026 - February 2027",
+    title: "Swiss Government Excellence Scholarships 2026-2027 (Research scholarships)",
+    titleEn: "Swiss Government Excellence Scholarships 2026-2027 (Research scholarships main candidate)",
+  },
   {
     date: "June 2025 - Present",
     title: "遺贈を活用した若手研究者支援策",

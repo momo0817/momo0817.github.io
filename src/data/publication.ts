@@ -75,6 +75,21 @@ export interface Publication {
 }
 
 export const publicationData: Publication[] = [
+
+    {
+    year: "2026",
+    type: "international-conference-peer-reviewed", // ← 追加
+    conference: "EMNLP",
+    title: "Investigating Oddness Annotation Ambiguity in LLM-Generated Stories for Elementary School Kanji Learning",
+    authors: "Kento Yoshimura, Kouta Nakayama, Takashi Kodama, Momoka Furuhashi, and Kyousuke Takami.",
+    fullConferenceName:"The 34th International Conference on Computers in Education",
+    conferenceAbbr:"ICCE",
+    pages: "--",
+    month: "November",
+    location: "New Zealand, Aotearoa.",
+    paperUrl: "",
+    },
+
   {
     year: "2026",
     type: "preprint", // ← 追加

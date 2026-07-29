@@ -8,9 +8,11 @@ import { NewsEntry } from "@/components/news-entry";
 import { newsData } from "@/data/news";
 import { ExperienceEntry } from "@/components/experience-entry";
 import { TalkEntry } from "@/components/talk-entry";
+import { Awards } from "@/components/awards";
 import { ResearchFellowshipEntry } from "@/components/reseach-fellowship";
 import { experienceData } from "@/data/experience";
 import { talkData } from "@/data/talk";
+import { awardData } from "@/data/award";
 import { researchFellowshipData } from "@/data/research-fellowship";
 // import { PortfolioEntry } from "@/components/portfolio-entry";
 // import { portfolioData } from "@/data/portfolio";
@@ -164,6 +166,17 @@ export default function Home() {
                             <TalkEntry key={index} talk={talk} />
                           ))}
                         </div>
+                      </section>
+                    )
+                  );
+                case Section.Award:
+                  return (
+                    awardData.length > 0 && (
+                      <section key={sectionName}>
+                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
+                          Awards
+                        </h2>
+                        <Awards awards={awardData} />
                       </section>
                     )
                   );

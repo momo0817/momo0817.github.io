@@ -9,6 +9,8 @@ import { ExperienceEntry } from "@/components/experience-entry";
 import { experienceData } from "@/data/experience";
 import { TalkEntry } from "@/components/talk-entry";
 import { talkData, getEnglishTalks } from "@/data/talk";
+import { Awards } from "@/components/awards";
+import { awardData, getEnglishAwards } from "@/data/award";
 import { researchFellowshipData } from "@/data/research-fellowship";
 import { ResearchFellowshipEntry } from "@/components/reseach-fellowship";
 import { OthersEntry } from "@/components/others";
@@ -19,6 +21,7 @@ import { sectionOrder, Section } from "@/data/section-order";
 export default function CVPage() {
   const englishPubs = getEnglishPublications();
   const englishTalks = getEnglishTalks();
+  const englishAwards = getEnglishAwards();
 
   return (
     <div className="min-h-screen bg-white text-black px-8 py-12">
@@ -142,6 +145,14 @@ export default function CVPage() {
                 {englishTalks.map((talk, idx) => (
                   <TalkEntry key={idx} talk={talk} hideLink />
                 ))}
+              </section>
+            ) : null;
+
+          case Section.Award:
+            return awardData.length ? (
+              <section key={sectionName} className="mb-8">
+                <h2 className="text-lg font-semibold mb-4">Awards</h2>
+                <Awards awards={englishAwards} hideLink className="space-y-0" />
               </section>
             ) : null;
 
