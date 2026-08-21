@@ -83,7 +83,7 @@ export const publicationData: Publication[] = [
     title: "How Well Can LLMs Simulate Real Learner Evaluations of Educational Feedback?",
     authors: "Momoka Furuhashi, Kouta Nakayama, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
     fullConferenceName:"The 2026 Conference on Empirical Methods in Natural Language Processing",
-    conferenceAbbr:"EMNLP2026",
+    conferenceAbbr:"EMNLP2026 Main",
     pages: "--",
     month: "October",
     location: "Budapest, Hungary.",
