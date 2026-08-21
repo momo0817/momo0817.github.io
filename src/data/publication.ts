@@ -76,14 +76,45 @@ export interface Publication {
 
 export const publicationData: Publication[] = [
 
+      {
+    year: "2026",
+    type: "international-conference-peer-reviewed", 
+    conference: "EMNLP",
+    title: "How Well Can LLMs Simulate Real Learner Evaluations of Educational Feedback?",
+    authors: "Momoka Furuhashi, Kouta Nakayama, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
+    fullConferenceName:"The 2026 Conference on Empirical Methods in Natural Language Processing",
+    conferenceAbbr:"EMNLP2026",
+    pages: "--",
+    month: "October",
+    location: "Budapest, Hungary.",
+    paperUrl: "",
+    },
+
+      {
+    year: "2026",
+    type: "domestic-conference-non-peer-reviewed", // ← 追加
+    conference: "YANS",
+    title: "小学校漢字学習におけるLLM生成物語の「違和感」の類型化とLLM間の比較.",
+    authors: "吉村 賢人, 高見 享佑, 古橋 萌々香, 中山 功太, 児玉 貴志.",
+    award: "奨励賞",
+    titleEn: "A Taxonomy of “Oddness” in LLM-Generated Stories for Elementary School Kanji Learning: A Comparison Across LLMs",
+    authorsEn: "Kento Yoshimura, Kyousuke Takami, Momoka Furuhashi, Kouta Nakayama, Takashi Kodama.",
+    awardEn: "Encouragement Award",
+    fullConferenceName:"The 21th Symposium of Young Researcher Association for NLP Studies",
+    conferenceAbbr:"YANS 2026",
+    month: "September",
+    location: "Sendai, Japan.",
+  },
+
+
     {
     year: "2026",
     type: "international-conference-peer-reviewed", // ← 追加
-    conference: "EMNLP",
+    conference: "ICCE",
     title: "Investigating Oddness Annotation Ambiguity in LLM-Generated Stories for Elementary School Kanji Learning",
     authors: "Kento Yoshimura, Kouta Nakayama, Takashi Kodama, Momoka Furuhashi, and Kyousuke Takami.",
     fullConferenceName:"The 34th International Conference on Computers in Education",
-    conferenceAbbr:"ICCE",
+    conferenceAbbr:"ICCE2026",
     pages: "--",
     month: "November",
     location: "New Zealand, Aotearoa.",
