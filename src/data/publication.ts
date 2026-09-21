@@ -76,6 +76,21 @@ export interface Publication {
 
 export const publicationData: Publication[] = [
 
+
+    {
+    year: "2026",
+     type: "international-conference-peer-reviewed", 
+     conference: "AACL-IJCNLP",
+    title: "Investigating Learner-Aware Design of LLM-Generated Educational Feedback",
+    authors: "Momoka Furuhashi, Kouta Nakayama, Noboru Kawai, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
+    fullConferenceName:"The 5th Asia-Pacific Chapter of the Association for Computational Linguistics & the 15th International Joint Conference on Natural Language Processing",
+    conferenceAbbr:"AACL-IJCNLP2026 Findings",
+    pages: "--",
+    month: "November",
+    location: "Hengqin, China.",
+    paperUrl: "",
+    },
+
       {
     year: "2026",
     type: "international-conference-peer-reviewed", 
@@ -121,14 +136,6 @@ export const publicationData: Publication[] = [
     paperUrl: "",
     },
 
-  {
-    year: "2026",
-    type: "preprint", // ← 追加
-    title: "Which Feedback Works for Whom? Differential Effects of LLM-Generated Feedback Elements Across Learner Profiles.",
-    authors: "Momoka Furuhashi, Kouta Nakayama, Noboru Kawai, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
-    paperUrl: "https://doi.org/10.48550/arXiv.2602.11650",
-    month: "February",
-    },
 {
     year: "2026",
     type: "article", // ← 追加
