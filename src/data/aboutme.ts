@@ -30,7 +30,7 @@ export const aboutMe: AboutMe = {
   imageUrl:"/about_me.JPG",
   googleScholarUrl: "https://scholar.google.co.jp/citations?view_op=list_works&hl=ja&authuser=3&user=NT4C1ZUAAAAJ",
   githubUsername: "momo0817",
-  linkedinUsername: "-",
+  linkedinUsername: "https://www.linkedin.com/in/momoka-furuhashi-9913872a1/?isSelfProfile=true",
   twitterUsername: "tohoku_nlp_mmk",
   // blogUrl: "https://",
   // cvUrl: "http://localhost:3000/cv",
