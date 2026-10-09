@@ -42,6 +42,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#FFFCF8]">
       <div className="max-w-4xl mx-auto px-6 pt-4 pb-12 md:px-8 md:pt-6 md:pb-16">
         <div className="space-y-10">
+          <section className="flex min-h-screen flex-col">
           <nav className="sticky top-0 z-10 -mx-6 border-y border-zinc-200 bg-[#FFFCF8]/95 px-6 py-3 backdrop-blur md:-mx-8 md:px-8">
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               {sectionNavItems.map((item) => (
@@ -81,6 +82,7 @@ export default function Home() {
               )}
             </section>
           </div>
+          </section>
 
           <div className="space-y-12 border-t border-zinc-200 pt-12">
             {/* Map through sectionOrder to render sections in correct order */}
