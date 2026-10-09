@@ -5,6 +5,8 @@ import { aboutMe } from "@/data/aboutme";
 import { newsData } from "@/data/news";
 
 export default function Home() {
+  const latestNews = newsData.slice(0, 5);
+
   return (
     <div className="min-h-screen bg-[#FFFCF8]">
       <div className="mx-auto max-w-4xl px-6 pt-4 pb-12 md:px-8 md:pt-6 md:pb-16">
@@ -30,7 +32,7 @@ export default function Home() {
                 News
               </h2>
               <div className="space-y-7">
-                {newsData.map((news, index) => (
+                {latestNews.map((news, index) => (
                   <div key={index}>
                     <NewsEntry news={news} />
                   </div>

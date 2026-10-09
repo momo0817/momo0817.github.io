@@ -18,5 +18,11 @@ export const newsData: News[] = [
   {
     date: "August 20th",
     title: "Paper accepted to EMNLP 2026 Main🎉"
+
+  },
+  {
+    date: "July 21st",
+    title: "My Visiting Research Period at Bern University of Applied Sciences Has Begun!🙌"
+    
   },
 ];
