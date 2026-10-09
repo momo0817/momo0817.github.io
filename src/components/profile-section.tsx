@@ -20,21 +20,8 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
   }
 
   return (
-    <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-4 md:space-y-8">
-      {aboutMe.imageUrl && (
-        <div className="w-1/3 md:w-full flex-shrink-0">
-          <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4]">
-            <Image
-              src={aboutMe.imageUrl}
-              alt={aboutMe.name}
-              fill
-              priority
-              className="object-cover rounded-xl"
-            />
-          </div>
-        </div>
-      )}
-      <div className="w-2/3 md:w-full">
+    <div className="space-y-8">
+      <div>
         <h1 className="font-serif text-3xl font-light tracking-wide mb-3">
           {aboutMe.name}
         </h1>
@@ -43,7 +30,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             {aboutMe.altName}
           </p>
         )}
-        <p className="text-zinc-600 text-xs leading-relaxed tracking-wide uppercase mb-6">
+        <p className="text-zinc-600 text-xs leading-relaxed tracking-wide uppercase">
           {aboutMe.title}
           <br />
           {aboutMe.institutionUrl ? (
@@ -59,6 +46,23 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             aboutMe.institution
           )}
         </p>
+      </div>
+
+      {aboutMe.imageUrl && (
+        <div className="w-full max-w-64">
+          <div className="relative aspect-[3/4]">
+            <Image
+              src={aboutMe.imageUrl}
+              alt={aboutMe.name}
+              fill
+              priority
+              className="object-cover rounded-xl"
+            />
+          </div>
+        </div>
+      )}
+
+      <div>
         <div className="flex gap-6 mb-6">
           {aboutMe.blogUrl && (
             <a

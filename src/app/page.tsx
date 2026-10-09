@@ -27,20 +27,11 @@ import { Publication, publicationTypeLabels, PublicationType } from "@/data/publ
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFFCF8]">
-      {/* Don't have a great call on whether max-w-screen-xl is better */}
-      <div className="max-w-screen-lg mx-auto px-8 py-24">
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
-          {/* Left Column - Fixed Info */}
-          <div className="col-span-12 md:col-span-4 space-y-12 mb-8 md:mb-0">
-            {/* Profile */}
-            <div className="md:sticky top-12 space-y-8">
-              <ProfileSection aboutMe={aboutMe} />
-            </div>
-          </div>
+      <div className="max-w-3xl mx-auto px-8 py-20 md:py-24">
+        <div className="space-y-20">
+          <ProfileSection aboutMe={aboutMe} />
 
-          {/* Right Column - Scrolling Content */}
-          <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-24">
+          <div className="space-y-24">
             <p
               className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
               dangerouslySetInnerHTML={{ __html: aboutMe.description + (aboutMe.researchInterest ? "<br>" + aboutMe.researchInterest : "")  }}

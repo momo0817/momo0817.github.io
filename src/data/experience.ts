@@ -51,7 +51,7 @@ export const experienceData: Experience[] = [
     companyUrl: "https://www.nii.ac.jp/en/",
   },
   {
-    date: "September 2023 - Present",
+    date: "September 2023 - July 2026",
     type: "student-trainee",
     title: "Student Trainee",
     company: "RIKEN AIP Natural Language Understanding Team",
