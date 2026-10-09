@@ -28,7 +28,6 @@ export default function Home() {
   const sectionNavItems = [
     { href: "#about", label: "About", show: true },
     { href: aboutMe.cvUrl ?? "/cv", label: "CV", show: Boolean(aboutMe.cvUrl) },
-    { href: `#${Section.News}`, label: "News", show: newsData.length > 0 },
     { href: `#${Section.Education}`, label: "Education", show: educationData.length > 0 },
     { href: `#${Section.Publication}`, label: "Publications", show: publicationData.length > 0 },
     { href: `#${Section.Experience}`, label: "Experience", show: experienceData.length > 0 },
@@ -59,38 +58,40 @@ export default function Home() {
 
           <ProfileSection aboutMe={aboutMe} />
 
-          <div className="space-y-12">
+          <div id="about" className="scroll-mt-16 space-y-10">
             <p
-              id="about"
               className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
               dangerouslySetInnerHTML={{ __html: aboutMe.description + (aboutMe.researchInterest ? "<br>" + aboutMe.researchInterest : "")  }}
             />
+
+            {newsData.length > 0 && (
+              <section>
+                <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
+                  News
+                </h2>
+                <div className="space-y-7">
+                  {newsData.map((news, index) => (
+                    <div key={index}>
+                      <NewsEntry news={news} />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
+
+          <div className="space-y-12 border-t border-zinc-200 pt-12">
             {/* Map through sectionOrder to render sections in correct order */}
             {sectionOrder.map((sectionName) => {
               // Most of this is redundant... but in case it needs to be unique.
               switch (sectionName) {
                 case Section.News:
-                  return (
-                    newsData.length > 0 && (
-                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                        <h2 className="font-serif text-l mb-6 tracking-wide uppercase">
-                          News
-                        </h2>
-                        <div className="space-y-7">
-                          {newsData.map((news, index) => (
-                            <div key={index}>
-                              <NewsEntry news={news} />
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
+                  return null;
                 case Section.Education:
                   return (
                     educationData.length > 0 && (
                       <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                        <h2 className="font-serif text-zinc-700 mb-6 tracking-wide uppercase">
+                        <h2 className="font-serif text-lg text-zinc-700 mb-6 tracking-wide uppercase">
                           Education
                         </h2>
                         <div className="space-y-7">
@@ -134,7 +135,7 @@ export default function Home() {
                   
                   return (
                     <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                      <h2 className="font-serif text-l mb-6 tracking-wide uppercase">
+                      <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
                         Publications
                       </h2>
                       
@@ -145,7 +146,7 @@ export default function Home() {
                         return (
                           <div key={type} className="mb-7">
                             {/* カテゴリ見出し */}
-                            <h3 className="font-serif text-l mb-3 tracking-wide italic font-medium text-zinc-700">
+                            <h3 className="font-serif text-base md:text-lg mb-3 tracking-wide italic font-medium text-zinc-700">
                               {label}
                             </h3>
                             
@@ -164,7 +165,7 @@ export default function Home() {
                   return (
                     experienceData.length > 0 && (
                       <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                        <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
+                        <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
                           Experience
                         </h2>
                         <div className="space-y-7">
@@ -179,7 +180,7 @@ export default function Home() {
                   return (
                     talkData.length > 0 && (
                       <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                        <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
+                        <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
                           Talks
                         </h2>
                         <div className="space-y-7">
@@ -194,7 +195,7 @@ export default function Home() {
                   return (
                     awardData.length > 0 && (
                       <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                        <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
+                        <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
                           Awards
                         </h2>
                         <Awards awards={awardData} className="space-y-7" />
@@ -205,7 +206,7 @@ export default function Home() {
                   return (
                     researchFellowshipData.length > 0 && (
                       <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                        <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
+                        <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
                           Grant
                         </h2>
                         <div className="space-y-7">
@@ -221,7 +222,7 @@ export default function Home() {
                   return (
                     reviewerData.length > 0 && (
                       <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                        <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
+                        <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
                           Reviewer
                         </h2>
                         <div className="space-y-7">
@@ -236,7 +237,7 @@ export default function Home() {
                   return (
                     othersData.length > 0 && (
                       <section key={sectionName} id={sectionName} className="scroll-mt-16">
-                        <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
+                        <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
                           Others
                         </h2>
                         <div className="space-y-7">

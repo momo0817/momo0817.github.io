@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { CvButton } from "./cv-button";
 import {
   Github,
   Linkedin,
@@ -48,23 +47,22 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
         </p>
 
         <div className="mt-4">
-          <div className="mb-3 flex flex-wrap gap-x-5 gap-y-2">
           {aboutMe.blogUrl && (
-            <a
-              href={aboutMe.blogUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
-              <span className="tracking-wider uppercase">Blog</span>
-            </a>
+            <div className="mb-3 flex flex-wrap gap-x-5 gap-y-2">
+              <a
+                href={aboutMe.blogUrl}
+                className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ArrowUpRight
+                  size={12}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                />
+                <span className="tracking-wider uppercase">Blog</span>
+              </a>
+            </div>
           )}
-          <CvButton cvUrl={aboutMe.cvUrl} />
-        </div>
         <div className="flex flex-wrap gap-x-5 gap-y-1.5">
           <a
             href={`mailto:${aboutMe.email}`}
