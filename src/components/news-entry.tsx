@@ -3,10 +3,10 @@ import { News } from "@/data/news";
 
 export function NewsEntry({ news }: { news: News }) {
   return (
-    <div className="flex flex-row gap-6">
-      <div className="flex flex-col flex-1">
-        <p className="text-xs text-zinc-500 mb-2">{news.date}</p>
-        <h3 className="font-serif text-md mb-3">
+    <div>
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-4">
+        <p className="shrink-0 text-sm text-zinc-500">{news.date}</p>
+        <h3 className="font-serif text-sm">
           {news.link ? (
             <a
               href={news.link}
@@ -24,8 +24,12 @@ export function NewsEntry({ news }: { news: News }) {
             news.title
           )}
         </h3>
-        <p className="text-sm text-zinc-600">{news.description}</p>
       </div>
+      {news.description && (
+        <p className="mt-1 text-sm text-zinc-600 sm:ml-[7.5rem]">
+          {news.description}
+        </p>
+      )}
     </div>
   );
 }
