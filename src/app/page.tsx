@@ -64,11 +64,11 @@ export default function Home() {
               dangerouslySetInnerHTML={{ __html: aboutMe.description + (aboutMe.researchInterest ? "<br>" + aboutMe.researchInterest : "")  }}
             />
 
-            {newsData.length > 0 && (
-              <section>
-                <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
-                  News
-                </h2>
+            <section>
+              <h2 className="font-serif text-lg mb-6 tracking-wide uppercase">
+                News
+              </h2>
+              {newsData.length > 0 ? (
                 <div className="space-y-7">
                   {newsData.map((news, index) => (
                     <div key={index}>
@@ -76,8 +76,10 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              </section>
-            )}
+              ) : (
+                <p className="text-sm text-zinc-500">No news yet.</p>
+              )}
+            </section>
           </div>
 
           <div className="space-y-12 border-t border-zinc-200 pt-12">
