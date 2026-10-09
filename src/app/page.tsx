@@ -25,14 +25,42 @@ import { Publication, publicationTypeLabels, PublicationType } from "@/data/publ
 
 
 export default function Home() {
+  const sectionNavItems = [
+    { href: "#about", label: "About", show: true },
+    { href: `#${Section.News}`, label: "News", show: newsData.length > 0 },
+    { href: `#${Section.Education}`, label: "Education", show: educationData.length > 0 },
+    { href: `#${Section.Publication}`, label: "Publications", show: publicationData.length > 0 },
+    { href: `#${Section.Experience}`, label: "Experience", show: experienceData.length > 0 },
+    { href: `#${Section.Research_Fellowship}`, label: "Grant", show: researchFellowshipData.length > 0 },
+    { href: `#${Section.Award}`, label: "Awards", show: awardData.length > 0 },
+    { href: `#${Section.Talk}`, label: "Talks", show: talkData.length > 0 },
+    { href: `#${Section.Reviewer}`, label: "Reviewer", show: reviewerData.length > 0 },
+    { href: `#${Section.Others}`, label: "Others", show: othersData.length > 0 },
+  ].filter((item) => item.show);
+
   return (
     <div className="min-h-screen bg-[#FFFCF8]">
       <div className="max-w-4xl mx-auto px-6 py-12 md:px-8 md:py-16">
-        <div className="space-y-12">
+        <div className="space-y-10">
           <ProfileSection aboutMe={aboutMe} />
 
-          <div className="space-y-14">
+          <nav className="sticky top-0 z-10 -mx-6 border-y border-zinc-200 bg-[#FFFCF8]/95 px-6 py-3 backdrop-blur md:-mx-8 md:px-8">
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {sectionNavItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-xs uppercase tracking-wide text-zinc-500 transition-colors hover:text-zinc-900"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </nav>
+
+          <div className="space-y-12">
             <p
+              id="about"
               className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
               dangerouslySetInnerHTML={{ __html: aboutMe.description + (aboutMe.researchInterest ? "<br>" + aboutMe.researchInterest : "")  }}
             />
@@ -43,7 +71,7 @@ export default function Home() {
                 case Section.News:
                   return (
                     newsData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
                         <h2 className="font-serif text-l mb-6 tracking-wide uppercase">
                           News
                         </h2>
@@ -60,7 +88,7 @@ export default function Home() {
                 case Section.Education:
                   return (
                     educationData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
                         <h2 className="font-serif text-zinc-700 mb-6 tracking-wide uppercase">
                           Education
                         </h2>
@@ -98,7 +126,7 @@ export default function Home() {
                   ];
                   
                   return (
-                    <section key={sectionName}>
+                    <section key={sectionName} id={sectionName} className="scroll-mt-16">
                       <h2 className="font-serif text-l mb-6 tracking-wide uppercase">
                         Publications
                       </h2>
@@ -108,19 +136,19 @@ export default function Home() {
                         if (!pubs || pubs.length === 0) return null;
                         
                         return (
-                          <div key={type} className="mb-10">
+                          <div key={type} className="mb-7">
                             {/* カテゴリ見出し */}
-                            <h3 className="font-serif text-l mb-5 tracking-wide italic font-medium text-zinc-700">
+                            <h3 className="font-serif text-l mb-3 tracking-wide italic font-medium text-zinc-700">
                               {publicationTypeLabels[type as PublicationType]?.en || type}
                             </h3>
                             
                             {/* 論文リスト */}
-                            <div className="space-y-8">
+                            <div className="space-y-4">
                               {pubs.map((publication, index) => (
                                 <div key={index}>
                                   <PublicationEntry publication={publication} />
                                   {index < pubs.length - 1 && (
-                                    <div className="h-px bg-zinc-200 my-5" />
+                                    <div className="h-px bg-zinc-200 my-3" />
                                   )}
                                 </div>
                               ))}
@@ -133,7 +161,7 @@ export default function Home() {
                   case Section.Experience:
                   return (
                     experienceData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
                         <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
                           Experience
                         </h2>
@@ -148,7 +176,7 @@ export default function Home() {
                 case Section.Talk:
                   return (
                     talkData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
                         <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
                           Talks
                         </h2>
@@ -163,7 +191,7 @@ export default function Home() {
                 case Section.Award:
                   return (
                     awardData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
                         <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
                           Awards
                         </h2>
@@ -174,7 +202,7 @@ export default function Home() {
                 case Section.Research_Fellowship:
                   return (
                     researchFellowshipData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
                         <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
                           Grant
                         </h2>
@@ -190,7 +218,7 @@ export default function Home() {
                 case Section.Reviewer:
                   return (
                     reviewerData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
                         <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
                           Reviewer
                         </h2>
@@ -205,7 +233,7 @@ export default function Home() {
                 case Section.Others:
                   return (
                     othersData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16">
                         <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
                           Others
                         </h2>

@@ -31,13 +31,13 @@ function highlightAuthor(authors: string) {
 
 export function PublicationEntry({ publication, hideLinks, showJapaneseTitle = false, index }: PublicationEntryProps & { showJapaneseTitle?: boolean }) {
   return (
-    <li className="mb-6">
+    <li className="mb-2">
       {/* 番号 */}
       {index !== undefined && (
         <span className="font-semibold mr-2">{index}.</span>
       )}
 
-      <div className="flex flex-col sm:flex-row gap-6">
+      <div className="flex flex-col gap-4 sm:flex-row">
         {publication.imageUrl && (
           <div className="w-full sm:w-1/4 min-w-[160px] relative">
             <Image
@@ -70,7 +70,7 @@ export function PublicationEntry({ publication, hideLinks, showJapaneseTitle = f
           <p className="text-sm text-zinc-600 mb-1">{highlightAuthor(publication.authors)}</p>
 
           {/* 会議情報 */}
-          <p className="text-sm text-zinc-500 mb-2">
+          <p className="text-sm text-zinc-500 mb-1">
             {publication.fullConferenceName ?? publication.conference}
             {publication.conferenceAbbr ? ` (${publication.conferenceAbbr})` : ""}
             {publication.pages ? `, pp. ${publication.pages}` : ""}
@@ -81,7 +81,7 @@ export function PublicationEntry({ publication, hideLinks, showJapaneseTitle = f
 
           {/* Paper / BibTeX のリンクを非表示にする場合 */}
           {!hideLinks && (
-            <div className="flex flex-row gap-6 mb-2">
+            <div className="flex flex-row gap-6 mb-1">
               {publication.paperUrl && (
                 <a
                   href={publication.paperUrl}
