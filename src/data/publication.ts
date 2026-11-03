@@ -88,7 +88,7 @@ export const publicationData: Publication[] = [
     pages: "--",
     month: "November",
     location: "Hengqin, China.",
-    paperUrl: "",
+    paperUrl: "https://arxiv.org/abs/2602.11650",
     },
 
       {
@@ -99,10 +99,10 @@ export const publicationData: Publication[] = [
     authors: "Momoka Furuhashi, Kouta Nakayama, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
     fullConferenceName:"The 2026 Conference on Empirical Methods in Natural Language Processing",
     conferenceAbbr:"EMNLP2026 Main",
-    pages: "--",
+    pages: "31473–31493",
     month: "October",
     location: "Budapest, Hungary.",
-    paperUrl: "",
+    paperUrl: "https://aclanthology.org/2026.emnlp-main.1378/",
     },
 
       {

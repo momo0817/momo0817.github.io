@@ -16,7 +16,7 @@ import { ResearchFellowshipEntry } from "@/components/reseach-fellowship";
 import { OthersEntry } from "@/components/others";
 import { othersData } from "@/data/others";
 import { sectionOrder, Section } from "@/data/section-order";
-
+import styles from "./cv.module.css";
 
 export default function CVPage() {
   const englishPubs = getEnglishPublications();
@@ -24,72 +24,67 @@ export default function CVPage() {
   const englishAwards = getEnglishAwards();
 
   return (
-    <div className="min-h-screen bg-white text-black px-8 py-12">
+    <article className={styles.page}>
+      {/* Mount page settings with this route so other pages keep their print defaults. */}
+      <style media="print">{"@page { size: A4; margin: 15mm; }"}</style>
+      <div className={styles.toolbar}>
+        <button type="button" onClick={() => window.print()}>
+          Print / Save PDF
+        </button>
+      </div>
       {/* 名前・学年セクション */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-2">CV</h1>
-        <h1 className="text-3xl font-bold">{aboutMe.name}</h1>
+      <header className={styles.header}>
+        <p className={styles.label}>CV</p>
+        <h1>{aboutMe.name}</h1>
         <p className="text-sm text-gray-600">
           {aboutMe.title} at {aboutMe.institution} in Japan.
         </p>
-    {/* Research Interest */}
-    {aboutMe.researchInterest && (
-        <div className="mt-4">
-        <h2 className="text-lg font-semibold mb-1">Research Interest</h2>
-        <p className="text-sm text-zinc-600">{aboutMe.researchInterest}</p>
-        </div>
-    )}
-      </div>
+        {sectionOrder.includes(Section.Contact_Information) && (
+          <section className={styles.contact}>
+            <h2 className={styles.contactHeading}>Contact Information</h2>
+            <ul className="space-y-1 text-sm text-zinc-600">
+                {aboutMe.email && (
+                <li>Email: <a href={`mailto:${aboutMe.email}`} className="text-blue-600 hover:underline">{aboutMe.email}</a></li>
+                )}
+                {aboutMe.githubUsername && (
+                <li>GitHub: <a href={`https://github.com/${aboutMe.githubUsername}`} className="text-blue-600 hover:underline">{aboutMe.githubUsername}</a></li>
+                )}
+                {aboutMe.linkedinUsername && aboutMe.linkedinUsername !== "-" && (
+                <li>LinkedIn: <a href={`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`} className="text-blue-600 hover:underline">{aboutMe.linkedinUsername}</a></li>
+                )}
+                {aboutMe.twitterUsername && (
+                <li>Twitter: <a href={`https://twitter.com/${aboutMe.twitterUsername}`} className="text-blue-600 hover:underline">@{aboutMe.twitterUsername}</a></li>
+                )}
+                {aboutMe.googleScholarUrl && (
+                <li>Google Scholar: <a href={aboutMe.googleScholarUrl} className="text-blue-600 hover:underline">Profile</a></li>
+                )}
+            </ul>
+          </section>
+        )}
+        {aboutMe.researchInterest && (
+          <div className={styles.interests}>
+            <h2>Research Interest</h2>
+            <p>{aboutMe.researchInterest}</p>
+          </div>
+        )}
+      </header>
 
       {/* 各セクション */}
       {sectionOrder.map((sectionName) => {
         switch (sectionName) {
-        case Section.Contact_Information:
-            return (
-                <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Contact Information</h2>
-                <ul className="space-y-1 text-sm text-zinc-600">
-                    {aboutMe.email && (
-                    <li>Email: <a href={`mailto:${aboutMe.email}`} className="text-blue-600 hover:underline">{aboutMe.email}</a></li>
-                    )}
-                    {aboutMe.githubUsername && (
-                    <li>GitHub: <a href={`https://github.com/${aboutMe.githubUsername}`} className="text-blue-600 hover:underline">{aboutMe.githubUsername}</a></li>
-                    )}
-                    {aboutMe.linkedinUsername && aboutMe.linkedinUsername !== "-" && (
-                    <li>LinkedIn: <a href={`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`} className="text-blue-600 hover:underline">{aboutMe.linkedinUsername}</a></li>
-                    )}
-                    {aboutMe.twitterUsername && (
-                    <li>Twitter: <a href={`https://twitter.com/${aboutMe.twitterUsername}`} className="text-blue-600 hover:underline">@{aboutMe.twitterUsername}</a></li>
-                    )}
-                    {aboutMe.googleScholarUrl && (
-                    <li>Google Scholar: <a href={aboutMe.googleScholarUrl} className="text-blue-600 hover:underline">Profile</a></li>
-                    )}
-                </ul>
-                </section>
-            );
-        case Section.Education:
-            return educationData.length ? (
-              <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Education</h2>
-                <div className="space-y-4">
-                  {educationData.map((edu, idx) => (
-                    <EducationEntry key={idx} education={edu} />
-                  ))}
-                </div>
-              </section>
-            ) : null;
+          case Section.Contact_Information:
+            return null;
           case Section.Education:
             return educationData.length ? (
-              <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Education</h2>
-                <div className="space-y-4">
+              <section key={sectionName} className={styles.section}>
+                <h2 className={styles.heading}>Education</h2>
+                <div className={styles.entries}>
                   {educationData.map((edu, idx) => (
                     <EducationEntry key={idx} education={edu} />
                   ))}
                 </div>
               </section>
             ) : null;
-
           case Section.Publication:
             if (!publicationData.length) return null;
             const groupedPubs: Record<string, Publication[]> = {};
@@ -106,22 +101,27 @@ export default function CVPage() {
               "other",
             ];
             return (
-              <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Publications</h2>
+              <section key={sectionName} className={styles.section}>
+                <h2 className={styles.heading}>Publications</h2>
                 {typeOrder.map((type) => {
                   const pubs = groupedPubs[type];
                   if (!pubs || !pubs.length) return null;
                   return (
-                    <div key={type} className="mb-8"> {/* 元は mb-4 */}
-                        <h3 className="italic font-medium mb-4"> {/* 元は mb-0 */}
-                            {publicationTypeLabels[type]?.en || type}
-                        </h3>
-                        <div className="space-y-4"> {/* 元は space-y-2 */}
-                            {pubs.map((pub, idx) => (
-                            <PublicationEntry key={idx} publication={pub} hideLinks showJapaneseTitle={true}  />
-                            ))}
-                        </div>
-                        </div>
+                    <div key={type} className={styles.publicationGroup}>
+                      <h3 className={styles.subheading}>
+                        {publicationTypeLabels[type]?.en || type}
+                      </h3>
+                      <ul className={styles.publications}>
+                        {pubs.map((pub, idx) => (
+                          <PublicationEntry
+                            key={idx}
+                            publication={pub}
+                            hideLinks
+                            showJapaneseTitle
+                          />
+                        ))}
+                      </ul>
+                    </div>
 
                   );
                 })}
@@ -130,49 +130,57 @@ export default function CVPage() {
 
           case Section.Experience:
             return experienceData.length ? (
-              <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Experience</h2>
-                {experienceData.map((exp, idx) => (
-                  <ExperienceEntry key={idx} experience={exp} />
-                ))}
+              <section key={sectionName} className={styles.section}>
+                <h2 className={styles.heading}>Experience</h2>
+                <div className={styles.entries}>
+                  {experienceData.map((exp, idx) => (
+                    <ExperienceEntry key={idx} experience={exp} />
+                  ))}
+                </div>
               </section>
             ) : null;
 
           case Section.Talk:
             return talkData.length ? (
-              <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Talks</h2>
-                {englishTalks.map((talk, idx) => (
-                  <TalkEntry key={idx} talk={talk} hideLink />
-                ))}
+              <section key={sectionName} className={styles.section}>
+                <h2 className={styles.heading}>Talks</h2>
+                <div className={styles.entries}>
+                  {englishTalks.map((talk, idx) => (
+                    <TalkEntry key={idx} talk={talk} hideLink />
+                  ))}
+                </div>
               </section>
             ) : null;
 
           case Section.Award:
             return awardData.length ? (
-              <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Awards</h2>
-                <Awards awards={englishAwards} hideLink className="space-y-0" />
+              <section key={sectionName} className={styles.section}>
+                <h2 className={styles.heading}>Awards</h2>
+                <Awards awards={englishAwards} hideLink className={styles.entries} />
               </section>
             ) : null;
 
           case Section.Research_Fellowship:
             return researchFellowshipData.length ? (
-              <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Grant</h2>
-                {researchFellowshipData.map((rf, idx) => (
-                  <ResearchFellowshipEntry key={idx} researchFellowship={rf} hideLink useEnglish />
-                ))}
+              <section key={sectionName} className={styles.section}>
+                <h2 className={styles.heading}>Grant</h2>
+                <div className={styles.entries}>
+                  {researchFellowshipData.map((rf, idx) => (
+                    <ResearchFellowshipEntry key={idx} researchFellowship={rf} hideLink useEnglish />
+                  ))}
+                </div>
               </section>
             ) : null;
 
           case Section.Others:
             return othersData.length ? (
-              <section key={sectionName} className="mb-8">
-                <h2 className="text-lg font-semibold mb-4">Others</h2>
-                {othersData.map((other, idx) => (
-                  <OthersEntry key={idx} others={other} hideLink />
-                ))}
+              <section key={sectionName} className={styles.section}>
+                <h2 className={styles.heading}>Others</h2>
+                <div className={styles.entries}>
+                  {othersData.map((other, idx) => (
+                    <OthersEntry key={idx} others={other} hideLink />
+                  ))}
+                </div>
               </section>
             ) : null;
 
@@ -180,6 +188,6 @@ export default function CVPage() {
             return null;
         }
       })}
-    </div>
+    </article>
   );
 }
