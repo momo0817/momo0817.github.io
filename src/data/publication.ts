@@ -85,10 +85,10 @@ export const publicationData: Publication[] = [
     authors: "Momoka Furuhashi, Kouta Nakayama, Noboru Kawai, Takashi Kodama, Saku Sugawara, and Kyosuke Takami.",
     fullConferenceName:"The 5th Asia-Pacific Chapter of the Association for Computational Linguistics & the 15th International Joint Conference on Natural Language Processing",
     conferenceAbbr:"AACL-IJCNLP2026 Findings",
-    pages: "--",
+    pages: "45–73",
     month: "November",
     location: "Hengqin, China.",
-    paperUrl: "https://arxiv.org/abs/2602.11650",
+    paperUrl: "https://aclanthology.org/2026.findings-aacl.4/",
     },
 
       {

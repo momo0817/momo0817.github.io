@@ -26,7 +26,7 @@ export default function CVPage() {
   return (
     <article className={styles.page}>
       {/* Mount page settings with this route so other pages keep their print defaults. */}
-      <style media="print">{"@page { size: A4; margin: 15mm; }"}</style>
+      <style media="print">{"@page { size: A4; margin: 15mm 20mm; }"}</style>
       <div className={styles.toolbar}>
         <button type="button" onClick={() => window.print()}>
           Print / Save PDF
@@ -111,7 +111,7 @@ export default function CVPage() {
                       <h3 className={styles.subheading}>
                         {publicationTypeLabels[type]?.en || type}
                       </h3>
-                      <ul className={styles.publications}>
+                      <ol className={styles.publications}>
                         {pubs.map((pub, idx) => (
                           <PublicationEntry
                             key={idx}
@@ -120,7 +120,7 @@ export default function CVPage() {
                             showJapaneseTitle
                           />
                         ))}
-                      </ul>
+                      </ol>
                     </div>
 
                   );
