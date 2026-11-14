@@ -26,7 +26,7 @@ export const aboutMe: AboutMe = {
   description:
     "I'm a 2nd-year PhD student at <a href='https://www.nlp.ecei.tohoku.ac.jp/about-us/labs/'>TohokuNLP Group</a>, <a href='https://www.is.tohoku.ac.jp/en/'>Tohoku University</a>.",
   email: "furuhashi.momoka.p4@dc.tohoku.ac.jp",
-  researchInterest: "My research interests include applying natural language processing techniques to generate feedback based on students’ answers and to automatically evaluation of generative tasks.", // ← 例
+  researchInterest: "My research interests lie at the intersection of natural language processing (NLP) and human-centered AI, with a particular focus on human evaluation, LLM-based simulation, and automatic evaluation of generative AI systems.", // ← 例
   imageUrl:"/about_me.JPG",
   googleScholarUrl: "https://scholar.google.co.jp/citations?view_op=list_works&hl=ja&authuser=3&user=NT4C1ZUAAAAJ",
   githubUsername: "momo0817",
