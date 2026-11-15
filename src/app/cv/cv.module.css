@@ -162,6 +162,20 @@
   margin-top: 1rem;
 }
 
+.skills > div {
+  margin-bottom: 0.3rem;
+  break-inside: avoid;
+}
+
+.skills dt,
+.skills dd {
+  display: inline;
+}
+
+.skills dt {
+  font-weight: 700;
+}
+
 .subheading {
   margin-bottom: 0.65rem;
   font-weight: 400;

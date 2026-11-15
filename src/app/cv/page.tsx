@@ -6,7 +6,7 @@ import { educationData } from "@/data/education";
 import { PublicationEntry } from "@/components/publication-entry";
 import { publicationData, Publication, publicationTypeLabels, PublicationType, getEnglishPublications } from "@/data/publication";
 import { ExperienceEntry } from "@/components/experience-entry";
-import { experienceData } from "@/data/experience";
+import { cvExperienceData, technicalSkills } from "@/data/cv";
 import { TalkEntry } from "@/components/talk-entry";
 import { talkData, getEnglishTalks } from "@/data/talk";
 import { Awards } from "@/components/awards";
@@ -39,6 +39,7 @@ export default function CVPage() {
         <p className="text-sm text-gray-600">
           {aboutMe.title} at {aboutMe.institution} in Japan.
         </p>
+        <p>I expect to graduate in March 2028.</p>
         {sectionOrder.includes(Section.Contact_Information) && (
           <section className={styles.contact}>
             <h2 className={styles.contactHeading}>Contact Information</h2>
@@ -129,12 +130,12 @@ export default function CVPage() {
             );
 
           case Section.Experience:
-            return experienceData.length ? (
+            return cvExperienceData.length ? (
               <section key={sectionName} className={styles.section}>
-                <h2 className={styles.heading}>Experience</h2>
+                <h2 className={styles.heading}>Research Experience</h2>
                 <div className={styles.entries}>
-                  {experienceData.map((exp, idx) => (
-                    <ExperienceEntry key={idx} experience={exp} />
+                  {cvExperienceData.map((exp, idx) => (
+                    <ExperienceEntry key={idx} experience={exp} descriptionAsList />
                   ))}
                 </div>
               </section>
@@ -188,6 +189,17 @@ export default function CVPage() {
             return null;
         }
       })}
+      <section className={styles.section}>
+        <h2 className={styles.heading}>Technical Skills</h2>
+        <dl className={styles.skills}>
+          {technicalSkills.map(({ category, skills }) => (
+            <div key={category}>
+              <dt>{category}:</dt>{" "}
+              <dd>{skills}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
     </article>
   );
 }

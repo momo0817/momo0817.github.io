@@ -24,9 +24,9 @@ export const aboutMe: AboutMe = {
   institution: "Tohoku University",
   // Note that links work in the description
   description:
-    "I'm a 2nd-year PhD student at <a href='https://www.nlp.ecei.tohoku.ac.jp/about-us/labs/'>TohokuNLP Group</a>, <a href='https://www.is.tohoku.ac.jp/en/'>Tohoku University</a>. I expect to graduate in March 2028.",
+    "I'm a 2nd-year PhD student at <a href='https://www.nlp.ecei.tohoku.ac.jp/about-us/labs/'>TohokuNLP Group</a>, <a href='https://www.is.tohoku.ac.jp/en/'>Tohoku University</a>.",
   email: "furuhashi.momoka.p4@dc.tohoku.ac.jp",
-  researchInterest: "My research interests lie at the intersection of natural language processing (NLP) and AI in education, with a particular focus on human-centered evaluation, LLM-based learner simulation, and automated evaluation. I am also interested in learner modeling and personalized learning to better understand learning difficulties, motivation, and engagement.", // ← 例
+  researchInterest: "LLM Evaluation, Human Simulation, Human Preference Modeling, and Human-AI Interaction.\n My research focuses on understanding the capabilities and limitations of LLM-based evaluation and human judgment simulation, with applications to education and other human-centered settings.", // ← 例
   imageUrl:"/about_me.JPG",
   googleScholarUrl: "https://scholar.google.co.jp/citations?view_op=list_works&hl=ja&authuser=3&user=NT4C1ZUAAAAJ",
   githubUsername: "momo0817",
