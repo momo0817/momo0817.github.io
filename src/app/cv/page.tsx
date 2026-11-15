@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { EducationEntry } from "@/components/education-entry";
 import { aboutMe } from "@/data/aboutme";
 import { educationData } from "@/data/education";
@@ -65,7 +66,9 @@ export default function CVPage() {
         {aboutMe.researchInterest && (
           <div className={styles.interests}>
             <h2>Research Interest</h2>
-            <p>{aboutMe.researchInterest}</p>
+            {aboutMe.researchInterest.split(/\n+/).map((paragraph, idx) => (
+              <p key={idx}>{paragraph.trim()}</p>
+            ))}
           </div>
         )}
       </header>
@@ -142,16 +145,31 @@ export default function CVPage() {
             ) : null;
 
           case Section.Talk:
-            return talkData.length ? (
-              <section key={sectionName} className={styles.section}>
-                <h2 className={styles.heading}>Talks</h2>
-                <div className={styles.entries}>
-                  {englishTalks.map((talk, idx) => (
-                    <TalkEntry key={idx} talk={talk} hideLink />
-                  ))}
-                </div>
-              </section>
-            ) : null;
+            return (
+              <Fragment key={sectionName}>
+                <section className={styles.section}>
+                  <h2 className={styles.heading}>Technical Skills</h2>
+                  <dl className={styles.skills}>
+                    {technicalSkills.map(({ category, skills }) => (
+                      <div key={category}>
+                        <dt>{category}:</dt>{" "}
+                        <dd>{skills}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
+                {talkData.length > 0 && (
+                  <section className={styles.section}>
+                    <h2 className={styles.heading}>Talks</h2>
+                    <div className={styles.entries}>
+                      {englishTalks.map((talk, idx) => (
+                        <TalkEntry key={idx} talk={talk} hideLink />
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </Fragment>
+            );
 
           case Section.Award:
             return awardData.length ? (
@@ -189,17 +207,6 @@ export default function CVPage() {
             return null;
         }
       })}
-      <section className={styles.section}>
-        <h2 className={styles.heading}>Technical Skills</h2>
-        <dl className={styles.skills}>
-          {technicalSkills.map(({ category, skills }) => (
-            <div key={category}>
-              <dt>{category}:</dt>{" "}
-              <dd>{skills}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
     </article>
   );
 }

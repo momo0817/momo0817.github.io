@@ -106,6 +106,10 @@
   text-align: left;
 }
 
+.interests p + p {
+  margin-top: 1lh;
+}
+
 .interests h2,
 .heading {
   margin-bottom: 0.65rem;
