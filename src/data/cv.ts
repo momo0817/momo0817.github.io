@@ -7,7 +7,7 @@ export const cvExperienceData: Experience[] = experienceData
       return {
         ...experience,
         date: "2024 – Present",
-        company: "National Institute of Informatics (NII), LLM-jp",
+        company: "National Institute of Informatics, Research and Development Center for Large Language Models (NII LLMC)",
         description: "Conducted research on LLM evaluation and human judgment simulation, resulting in three first-author papers at EMNLP 2025, EMNLP 2026, and AACL 2026.",
       };
     }
