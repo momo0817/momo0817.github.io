@@ -26,7 +26,7 @@ export const aboutMe: AboutMe = {
   description:
     "I'm a 2nd-year PhD student at <a href='https://www.nlp.ecei.tohoku.ac.jp/about-us/labs/'>TohokuNLP Group</a>, <a href='https://www.is.tohoku.ac.jp/en/'>Tohoku University</a>.",
   email: "furuhashi.momoka.p4@dc.tohoku.ac.jp",
-  researchInterest:"LLM Evaluation, Evaluation Reliability, Human-Centered AI Evaluation, and Human Preference Modeling.\N My research focuses on understanding the reliability and limitations of LLM-based evaluation methods, particularly their alignment with human judgments. I am interested in developing robust evaluation frameworks that identify discrepancies between AI-generated assessments and human perspectives.",
+  researchInterest:"Human Simulation, User Modeling, Human Preference Modeling, and LLM Evaluation.\nMy research focuses on modeling and simulating human judgments using LLMs, particularly investigating individual differences and the limitations of LLM-based user simulations. I am interested in developing more reliable approaches to modeling user preferences and behaviors in human-AI interactions.",
    //"LLM Evaluation, Human Simulation, Human Preference Modeling, and Human-AI Interaction.\n My research focuses on understanding the capabilities and limitations of LLM-based evaluation and human judgment simulation, with applications to education and other human-centered settings.", // ← 例
   imageUrl:"/about_me.JPG",
   googleScholarUrl: "https://scholar.google.co.jp/citations?view_op=list_works&hl=ja&authuser=3&user=NT4C1ZUAAAAJ",
