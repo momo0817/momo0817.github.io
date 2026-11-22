@@ -13,7 +13,7 @@ export const educationData: Education[] = [
     year: "April 2025—Present",
     institution: "Tohoku University",
     degree: "D.S. in Information Science",
-    advisor: "Kentaro Inui, Yuichiro Matsubayashi",
+    advisor: "Keisuke Sakaguchi, Kentaro Inui",
   },
   {
     year: "April 2023—March 2025",
