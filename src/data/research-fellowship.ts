@@ -9,9 +9,14 @@ export interface Research_Fellowship {
 
 export const researchFellowshipData: Research_Fellowship[] = [
   {
+    date: "November 2026",
+    title: "言語処理学会 海外留学支援",
+    titleEn: "Scholarship for Study abroad by the Association for Natural Language Processing",
+  },
+  {
     date: "September 2026 - February 2027",
-    title: "Swiss Government Excellence Scholarships 2026-2027 (Research scholarships)",
-    titleEn: "Swiss Government Excellence Scholarships 2026-2027 (Research scholarships main candidate)",
+    title: "Swiss Government Excellence Scholarships 2026-2027 (Research Scholarships)",
+    titleEn: "Swiss Government Excellence Scholarships 2026-2027 (Research Scholarships Main Candidate)",
   },
   {
     date: "June 2025 - Present",
